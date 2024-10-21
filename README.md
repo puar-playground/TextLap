@@ -46,7 +46,8 @@ torchrun --nproc_per_node=8 --master_port=20003 fastchat/train/train.py \
 ```
 
 ### 3. Inference
-#### 3.1 graphic design model
+#### 3.1 Graphic design model
+The model is available at [puar-playground/TextLap-Graphic](https://huggingface.co/puar-playground/TextLap-Graphic). 
 The graphic design model on the `Crello` dataset requires a multimodal language model to generate captions for each visual element. The code to run the inference script is as follows:
 ```
 python inference_crello.py
@@ -54,7 +55,8 @@ python inference_crello.py
 The code will show a comparison between the real layout and generated layout.
 <img src="https://github.com/puar-playground/TextLap/blob/main/figure/Graphic_layout_result.png" alt="demo" width="400"/>
 
-#### 3.2 image layout planning model
+#### 3.2 Image layout planning model
+The model is available at [puar-playground/TextLap-COCO](https://huggingface.co/puar-playground/TextLap-COCO). 
 The image layout planning model is trained on the COCO layout dataset. The checkpoint trained using CSS layout format is released and tested:
 ```
 python inference_coco.py
@@ -64,7 +66,7 @@ python inference_coco.py
 ### 4. Command line Chat
 For chat through command line
 ```
-python3 -m fastchat.serve.cli --model-path "/dir/to/checkpoint" --query_dir "path/to/test_data.json"
+python3 -m fastchat.serve.cli --model-path "puar-playground/TextLap-COCO"
 ```
 
 
